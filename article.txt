@@ -1,0 +1,46 @@
+Document Your Software Project
+==============================
+
+Ian Dees
+PNSQC 2010
+
+``Welcome to the team. Here are a couple of bugs you can fix to learn
+your way around the system. Here's the subsystem where you'll probably
+want to start looking.''
+
+Have you heard this before? Perhaps it was followed by a wild goose
+chase through the code, as you strove to read the mind of the coder
+before you and decipher the purpose of each function.
+
+Or perhaps it turned out differently. You may have opened the project
+folder to find a welcome mat of sorts. Someone may have carefully laid
+out a README file giving a quick overview of the directory structure,
+names of functions to look at first, and even code samples hinting at
+how to use or extend the code. Maybe that someone was you, several
+years ago.
+
+How Documentation Goes Wrong
+----------------------------
+What kinds of problems do developers run into when we try to come up
+to speed on an existing project? Specifically, in what ways does the
+documentation get in the way of our understanding of the code base?
+
+No documentation at all
+~~~~~~~~~~~~~~~~~~~~~~
+TBD
+
+Letting a tool do your work for you
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TBD
+
+Trying to do too much
+~~~~~~~~~~~~~~~~~~~~~
+TBD
+
+Telling the reader what he already knows
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TBD
+
+Falling out of date
+~~~~~~~~~~~~~~~~~~~
+TBD

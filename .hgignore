@@ -1,0 +1,7 @@
+\.DS_Store$
+
+^docbook/
+^pnsqc\.xml$
+^pnsqc\.fo$
+^fop\.cfg$
+^pnsqc\.pdf$

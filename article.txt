@@ -5,12 +5,12 @@ Ian Dees
 PNSQC 2010
 
 ``Welcome to the team. Here are a couple of bugs you can fix to learn
-your way around the system. Here's the subsystem where you'll probably
-want to start looking.''
+your way around the source code. You'll probably want to start by
+looking in this subsystem.''
 
 Have you heard this before? Perhaps it was followed by a wild goose
 chase through the code, as you strove to read the mind of the coder
-before you and decipher the purpose of each function.
+who came before you.
 
 Or perhaps it turned out differently. You may have opened the project
 folder to find a welcome mat of sorts. Someone may have carefully laid
@@ -19,28 +19,85 @@ names of functions to look at first, and even code samples hinting at
 how to use or extend the code. Maybe that someone was you, several
 years ago.
 
-How Documentation Goes Wrong
-----------------------------
-What kinds of problems do developers run into when we try to come up
-to speed on an existing project? Specifically, in what ways does the
-documentation get in the way of our understanding of the code base?
+In this article, we're going to discuss how programming documentation
+goes wrong, and what you can do about it.
 
-No documentation at all
-~~~~~~~~~~~~~~~~~~~~~~
+What Do You Mean, ``Documentation?''
+------------------------------------
+Any kind of technical documentation can benefit from care and
+attention to detail. In-code commentary, user manuals, architectural
+walkthroughs, and requirements documents should all be written in
+clear language and kept up to date. On any given project, each of
+these types is going to come with its own set of constraints on
+length, level of formality, and assumptions about its audience.
+
+This article focuses on one kind of writing: software library
+documentation. Your audience will be your fellow programmers, very
+likely including yourself. The scope is something quite a bit narrower
+than an entire system--something along the lines of one library or
+subsystem.
+
+Think back to the last time you visited an unfamiliar subdirectory of
+your source tree for the first time. Perhaps you were assigned to help
+another team develop their feature, or simply found an interesting
+name in the project directory and wondered, ``What's in here?''
+
+How easy was it to learn the purpose of that particular subsystem? Was
+there a README, or was it cultural knowledge among the team what that
+directory was for? Was there any documentation at all in the directory,
+or were you expected to look in some central location for everything?
+
+If you did find documentation, how helpful was it? Was it boring or
+engaging? Did it give a quick overview of the more important files in
+the directory? Was there a ``Hello world'' code example you could try
+out? If so, was the example up to date?
+
+Keep your answers to these questions in mind as you read the next
+couple of sections.
+
+Document Misfits
+----------------
+People write documents for good reasons. (And not just ``because
+management said to.'') You can probably think of several right off
+the bat: pride in one's work, sympathy for one's co-workers, or even
+simple self-preservation in anticipation of having to understand code
+years later.
+
+What goes wrong, then? Assuming authors' hearts are in the right
+place, we can imagine that a document that fails us may just be the
+wrong kind of document for the task. Let's look at a few ways in which
+a software library might be the wrong kind of document.
+
+Invisible Ink
+~~~~~~~~~~~~~
+A subsystem might have no documentation at all. This scenario is
+distressingly common, and to my embarrassment I've been party to it as
+well. I'm going to take advantage of the bully pulpit afforded to
+paper authors, and speculate on some of the causes.
+
+We skip documentation because we run out of time. We skip it because
+we're self-conscious about writing narrative text. We start a tiny new
+project and think, ``This thing's way to small to bother documenting;
+just look at the source code!'' We get frustrated with flaky writing
+tools and bureaucratic workflows.
+
+As we'll soon see, there are a few simple things you can do to address
+nearly all of these causes of missing documentation.
+
+Ghost Writer
+~~~~~~~~~~~~
+A close cousin of the invisible document is the ghost-written
+document; that is, the automated help pages generated from the
+comments in your source code. These are great for reference material,
+especially if they're hyperlinked and searchable. By all means, link
+to auto-generated reference from your written text. But machines can't
+do the job we're talking about today: making a newcomer feel welcome
+to a project.
+
+One Document to Rule Them All
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 TBD
 
-Letting a tool do your work for you
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-TBD
-
-Trying to do too much
-~~~~~~~~~~~~~~~~~~~~~
-TBD
-
-Telling the reader what he already knows
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-TBD
-
-Falling out of date
+The Ancient Scrolls
 ~~~~~~~~~~~~~~~~~~~
 TBD

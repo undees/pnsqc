@@ -14,7 +14,7 @@ who came before you.
 
 Or perhaps it turned out differently. You may have opened the project
 folder to find a welcome mat of sorts. Someone may have carefully laid
-out a README file giving a quick overview of the directory structure,
+out a +README+ file giving a quick overview of the directory structure,
 names of functions to look at first, and even code samples hinting at
 how to use or extend the code. Maybe that someone was you, several
 years ago.
@@ -24,6 +24,7 @@ goes wrong, and what you can do about it.
 
 What Do You Mean, ``Documentation?''
 ------------------------------------
+
 Any kind of technical documentation can benefit from care and
 attention to detail. In-code commentary, user manuals, architectural
 walkthroughs, and requirements documents should all be written in
@@ -37,13 +38,16 @@ likely including yourself. The scope is something quite a bit narrower
 than an entire system--something along the lines of one library or
 subsystem.
 
+Thought Experiment
+~~~~~~~~~~~~~~~~~~
+
 Think back to the last time you visited an unfamiliar subdirectory of
 your source tree for the first time. Perhaps you were assigned to help
 another team develop their feature, or simply found an interesting
 name in the project directory and wondered, ``What's in here?''
 
 How easy was it to learn the purpose of that particular subsystem? Was
-there a README, or was it cultural knowledge among the team what that
+there a +README+, or was it cultural knowledge among the team what that
 directory was for? Was there any documentation at all in the directory,
 or were you expected to look in some central location for everything?
 
@@ -57,19 +61,21 @@ couple of sections.
 
 Document Misfits
 ----------------
+
 People write documents for good reasons. (And not just ``because
 management said to.'') You can probably think of several right off
 the bat: pride in one's work, sympathy for one's co-workers, or even
-simple self-preservation in anticipation of having to understand code
-years later.
+simple self-preservation.
 
 What goes wrong, then? Assuming authors' hearts are in the right
 place, we can imagine that a document that fails us may just be the
 wrong kind of document for the task. Let's look at a few ways in which
-a software library might be the wrong kind of document.
+a software library might not be getting the textual attention it
+deserves..
 
 Invisible Ink
 ~~~~~~~~~~~~~
+
 A subsystem might have no documentation at all. This scenario is
 distressingly common, and to my embarrassment I've been party to it as
 well. I'm going to take advantage of the bully pulpit afforded to
@@ -86,18 +92,57 @@ nearly all of these causes of missing documentation.
 
 Ghost Writer
 ~~~~~~~~~~~~
+
 A close cousin of the invisible document is the ghost-written
 document; that is, the automated help pages generated from the
 comments in your source code. These are great for reference material,
 especially if they're hyperlinked and searchable. By all means, link
-to auto-generated reference from your written text. But machines can't
-do the job we're talking about today: making a newcomer feel welcome
-to a project.
+to auto-generated API guides from your written text. But machines
+can't do the job we're talking about today: making a newcomer feel
+welcome to a project.
 
 One Document to Rule Them All
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-TBD
+
+Some shops demand that one file be the gateway to all understanding of
+the project. Hardware layouts, software architecture, UML diagrams,
+elaborate class hierarchies, and everything else gets dumped into this
+one location.
+
+It's easy to see why this approach is tempting. If every fact about
+the system lives in one place, then one can turn to the master
+document for any answer--in theory. The problem is that these would-be
+museums quickly become mausoleums. Those elaborate diagrams that got
+produced not out of any real need, but because someone thought the
+team should have them? Dumped in the burial ground and
+forgotten. Which leads us to our final misfit.
 
 The Ancient Scrolls
 ~~~~~~~~~~~~~~~~~~~
-TBD
+
+Documents need to be kept up to date. It feels silly even having to
+say this. But I've definitely encountered libraries whose example code
+no longer ran unaltered, or whose descriptions didn't match the API
+any more. I'll bet you have, too.
+
+People don't come into the office and decide to put off documentation
+updates. Maintaining the docs just doesn't become part of our habits,
+for the same reason that creating them doesn't become part of our
+habits. Every little barrier in the way of writing looks like an
+impenetrable wall when we think about doing it over and over again in
+maintenance mode.
+
+It follows that any little thing we can do to stop ourselves from
+dreading writing and just _write_ will have a big payoff. I'd like to
+discuss several such things you can do in service of this goal. To tie
+these various activities together, I'd like to propose a metaphor for
+software documentation that carries warm, familiar connotations for
+most of us.
+
+The Magazine Metaphor
+---------------------
+
+Did you ever subsscribe to _Dr. Dobb's Journal_? _BYTE_? _COMPUTE!_?
+Remember the thrill of diving into some brand new technique, and being
+presented with real, live code samples that you could actually type in
+and run right on the spot?

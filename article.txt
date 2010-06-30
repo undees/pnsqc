@@ -263,6 +263,7 @@ ReStructuredText, and AsciiDoc. Using one of these formats means just
 writing like you'd normally do, and then adopting a few simple
 conventions for section titles, code excerpts, and so on. For example,
 here's how a README file might begin in ReStructuredText:
+footnote:[http://docutils.sourceforge.net/rst.html]
 
 --------------------------------------------------------------------
 include::example.rst[]
@@ -270,11 +271,11 @@ include::example.rst[]
 
 The other text formats look similar to this. I chose ReStructuredText
 for this example because it's the one used by Sphinx, the tool behind
-the Python library documentation. Sphinx is designed for writing books
-and articles, so it's very close to the sweet spot for introducing
-readers to a software library. If you happen to be writing about a
-Python project, Sphinx can link to your generated source
-documentation.
+the Python library documentation. footnote:[http://sphinx.pocoo.org]
+Sphinx is designed for writing books and articles, so it's very close
+to the sweet spot for introducing readers to a software library. If
+you happen to be writing about a Python project, Sphinx can link to
+your generated source documentation.
 
 Machine-friendly Markup
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -289,9 +290,9 @@ translate it into another format, or automatically update snippets of
 your source code.
 
 Incidentally, the AsciiDoc format described earlier generates DocBook
-XML behind the scenes. So you can get the best of both worlds: the
-ease of plain text, and the feature set of the entire DocBook
-toolchain.
+XML behind the scenes. footnote:[http://www.methods.co.nz/asciidoc] So
+you can get the best of both worlds: the ease of plain text, and the
+feature set of the entire DocBook toolchain.
 
 Word Processors
 ^^^^^^^^^^^^^^^
@@ -333,11 +334,12 @@ examples into your document.
 
 But if your project's programming interface changes frequently, you'll
 need to re-run your examples and keep the versions inside your
-document up to date. This task is easier with the text-based
-formats; most have commands that say in effect, ``insert the source
-code from this external file here.'' For the ones that lack this
-feature, you can use a templating engine such as the Ruby-based eRubis
-or the language-independent m4.
+document up to date. This task is easier with the text-based formats;
+most have commands that say in effect, ``insert the source code from
+this external file here.'' For the ones that lack this feature, you
+can use a templating engine such as the Ruby-based eRubis or the
+language-independent m4. footnote:[http://www.kuwata-lab.com/erubis]
+footnote:[http://www.gnu.org/software/m4/m4.html]
 
 Automatic updates are a little trickier when you're using a word
 processor. If you're only responsible for documenting a couple of
@@ -349,7 +351,9 @@ files (which are easier to test automatically).
 
 You can also just update the document by writing a program. Most word
 processors have either a scripting API or an XML-based file format
-that's easy to generate automatically.
+that's easy to generate automatically. footnote:[For a related example
+of updating a presentation programmatically, see
+http://github.com/undees/snippetize.]
 
 Provide a Path from ``Hello world'' to Mastery
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -362,10 +366,11 @@ questions, which almost certainly include the following:
 * What's the equivalent of ``Hello world'' for this system?
 
 As Jacob Kaplan-Moss writes in his excellent blog post on project
-documentation, ``Be easy.... But not too easy.'' You want your reader
-to get an early success, then challenge him with a couple more
-realistic examples, then point him toward the more in-depth resources
-that live elsewhere.
+documentation, ``Be easy.... But not too easy.''
+footnote:[http://jacobian.org/writing/great-documentation/what-to-write]
+You want your reader to get an early success, then challenge him with
+a couple more realistic examples, then point him toward the more
+in-depth resources that live elsewhere.
 
 Closing Thoughts
 ----------------

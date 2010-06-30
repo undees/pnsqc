@@ -1,8 +1,8 @@
 Document Your Software Project
 ==============================
-
-Ian Dees
-PNSQC 2010
+Ian Dees <ian.s.dees@tektronix.com>
+v0.1, June 2010:
+First draft.
 
 ``Welcome to the team. Here are a couple of bugs you can fix to learn
 your way around the source code. You'll probably want to start by
@@ -95,10 +95,10 @@ Ghost Writer
 
 A close cousin of the invisible document is the ghost-written
 document; that is, the automated help pages generated from the
-comments in your source code. These are great for reference material,
-especially if they're hyperlinked and searchable. By all means, link
-to auto-generated API guides from your written text. But machines
-can't do the job we're talking about today: making a newcomer feel
+comments in your source code. These are fine for giving your readers a
+way to look up what your library's +foo()+ function does. But how are
+they supposed to know that's the function they need? Machines can't do
+the job we're talking about today: the job of making a newcomer feel
 welcome to a project.
 
 One Document to Rule Them All
@@ -142,7 +142,170 @@ most of us.
 The Magazine Metaphor
 ---------------------
 
-Did you ever subsscribe to _Dr. Dobb's Journal_? _BYTE_? _COMPUTE!_?
-Remember the thrill of diving into some brand new technique, and being
-presented with real, live code samples that you could actually type in
-and run right on the spot?
+When you were cutting your teeth as a coder, did you ever subscribe to
+_Dr. Dobb's Journal_? How about _BYTE_, or _COMPUTE!_? Remember the
+thrill of diving into some brand new technique, and being presented
+with real, live code samples that you could actually type in and run
+right on the spot?
+
+It may be a bit unrealistic to expect users of our libraries to feel
+quite that level of excitement about software that's just part of our
+day jobs. Even so, a well-written project introduction has a few
+things in common with a short programming article in a magazine. Let's
+look into a few of these features.
+
+One Sitting
+~~~~~~~~~~~
+
+The engineer trying out your library doesn't have all day to read an
+entire binder's worth of writing. There's a place for exhaustive
+coverage of a subsystem: the reference material. Give your reader a
+few pages that can be printed out and read over a cup of coffee.
+
+Working Examples
+~~~~~~~~~~~~~~~~
+
+One of the most heavily leaned-on subsystems at work has a well-loved
+usage guide. It's not easy to find in our directory structure (``was
+that in +documents/misc/toolname+, or +documents/manuals+?''). And
+it's not quite up to date with the latest version of the code it
+describes. But it's worth seeking out and reading anyway, because it
+does such a thorough job explaining how to write code for this
+subsystem.
+
+In one sixty-line example that fits on a single page, the author is
+able to demonstrate all the library's major features. In the adjoining
+text, he explains what each single line of code does.
+
+
+ from work had a how-to guide that was
+hard to find and not quite up to date with the latest code, but that
+was worth the effort to find and read. The author had carefully laid
+out 
+
+Curated Code Excerpts
+~~~~~~~~~~~~~~~~~~~~~
+
+TBD
+
+A Real Page-Turner
+~~~~~~~~~~~~~~~~~~
+
+TBD
+
+How To Get There From Here
+--------------------------
+
+TBD
+
+Keep It With the Code
+~~~~~~~~~~~~~~~~~~~~~
+
+TBD
+
+Use Tools That Fit Your Hand
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We're all under schedule pressure. How do we make sure that the task
+of creating and maintaining the documentation isn't the first thing
+thrown out the window as the deadline draws near? Choosing a
+lightweight format is one way we can trick ourselves into doing the
+right thing. If we think of our project guide as a magazine article,
+it seems less difficult and more approachable.
+
+Choosing a writing tool is another part of this psychological
+game. Use the tool that's not going to become an excuse for you to
+skip out on your writing duties. If you find yourself thinking, ``Now
+I have to wait all day for the word processor to launch,'' you may
+prefer a plain-text format and the comfort of your favorite
+programming editor. If the prospect of memorizing obscure bold /
+italic codes annoys you, a dedicated writing tool may be the best fit.
+
+Plain Text and Its Relatives
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Don't underestimate the power of plain text. It can be read from the
+command line with no additional tools, sent around as e-mail, and
+tracked usefully with revision control tools. This includes the
+``humane markup'' languages, such as Textile, Markdown,
+ReStructuredText, and AsciiDoc. Using of these formats means just
+writing like you'd normally do, and then adopting a few simple
+conventions for section titles, code excerpts, and so on. For example,
+here's how a README file might begin in ReStructuredText:
+
+  Halt-o-Meter
+  ============
+  Welcome to the Halt-o-Meter! This software reads the source code of
+  your program and tells you whether or not it will run to
+  completion (and they said it was impossible!).
+
+  Example
+  -------
+  Save the following code in ``example.c``::
+    int main() {
+      for (;;);
+      return 0;
+    }
+
+  Now, run Halt-o-Meter::
+    C:\> haltometer example.c
+    Checking... example.c does NOT halt.
+
+Machine-friendly Markup
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Formats such as DocBook, LaTeX, and RTF are also text-based, but
+typically involve inserting instructions for the typesetting among the
+words of your document. To one degree or another, they're more
+difficult to write by hand than plain text (LaTeX is the easiest in
+this regard). This added complexity pays off, though, when it's time
+to ask a machine to do something to your text--such as print it,
+translate it into another format, or automatically update snippets of
+your source code.
+
+Incidentally, the AsciiDoc format described earlier generates DocBook
+XML behind the scenes. So you can get the best of both worlds: the
+ease of plain text, and the feature set of the entire DocBook
+toolchain.
+
+Word Processors
+^^^^^^^^^^^^^^^
+
+TBD
+
+Again, it comes down to choosing the tool that stays out of your
+way. For instance, our software lead and I were creating a design
+document together for a new feature. We started by writing bulleted
+lists in our text editors. We considered porting the text to a
+``real'' tool, such as a word processor, later on. At the moment,
+though, we didn't want anything to disrupt the flow of ideas. So we
+continued working in text, gradually expanding each bullet into
+sections, titles, and paragraphs.
+
+As it turns out, we ended up with something so close to the ``humane
+markup'' formats that it was the work of a few minutes to clean it up
+and generate a nice-looking PDF to share with the rest of the team.
+
+Keep the Code Up to Date
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+TBD
+
+Provide a Path from ``Hello world'' to Mastery
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+An engineer who stumbles across your project directory has a number of
+questions, which almost certainly include the following:
+* What is this thing?
+* How do I get it and all the dependencies installed?
+* What's the equivalent of ``Hello world'' for this system?
+
+Closing Thoughts
+----------------
+
+TBD
+
+Further Reading
+---------------
+``Writing great documentation: what to write,'' Jacob
+Kaplan-Moss. November 10, 2009.

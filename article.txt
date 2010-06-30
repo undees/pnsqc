@@ -21,9 +21,9 @@ years ago.
 
 In this article, we're going to discuss how programming documentation
 goes wrong, and what you can do about it. It doesn't take a
-world-class technical writer to document a software project, or even
-to put together an article like this one. It just takes a few times
-being baffled by an unfamiliar, undocumented code base.
+world-class technical writer to document a software project (and it
+certainly didn't take one to produce this paper!). It just takes a few
+times being baffled by an unfamiliar, undocumented code base.
 
 What Do You Mean, ``Documentation?''
 ------------------------------------
@@ -46,7 +46,7 @@ Thought Experiment
 
 Think back to the last time you visited an unfamiliar subdirectory of
 your source tree for the first time. Perhaps you were assigned to help
-another team develop their feature, or simply found an interesting
+another teammate develop a feature, or simply found an interesting
 name in the project directory and wondered, ``What's in here?''
 
 How easy was it to learn the purpose of that particular subsystem? Was
@@ -86,7 +86,7 @@ paper authors, and speculate on some of the causes.
 
 We skip documentation because we run out of time. We skip it because
 we're self-conscious about writing narrative text. We start a tiny new
-project and think, ``This thing's way to small to bother documenting;
+project and think, ``This thing's way too small to bother documenting;
 just look at the source code!'' We get frustrated with flaky writing
 tools and bureaucratic workflows.
 
@@ -112,7 +112,7 @@ understanding of the project. Hardware layouts, software architecture,
 UML diagrams, elaborate class hierarchies, and everything else gets
 dumped into this one location.
 
-It's easy to see why this approach is tempting. If every fact about
+It's easy to see why this approach is so common. If every fact about
 the system lives in one place, then one can turn to the master
 document for any answer--in theory. The problem is that these would-be
 museums quickly become mausoleums. Those elaborate diagrams that got
@@ -168,13 +168,13 @@ few pages that can be printed out and read over a cup of coffee.
 Working Examples
 ~~~~~~~~~~~~~~~~
 
-One of the most heavily leaned-on subsystems at work has a well-loved
-usage guide. It's not easy to find in our directory structure (``was
-that in +documents/misc/toolname+, or +documents/manuals+?''). And
-it's not quite up to date with the latest version of the code it
-describes. But it's worth seeking out and reading anyway, because it
-does such a thorough job explaining how to write code for this
-subsystem.
+One of the most heavily leaned-on subsystems in our office has a
+well-loved usage guide. It's not easy to find in our directory
+structure (``was that in +documents/misc/toolname+, or
++documents/manuals+?''). And it's not quite up to date with the latest
+version of the code it describes. But it's worth seeking out and
+reading anyway, because it does such a thorough job explaining how to
+write code for this subsystem.
 
 In one sixty-line example that fits on a single page, the author is
 able to demonstrate all the library's major features. In the adjoining
@@ -184,18 +184,17 @@ Curated Code Excerpts
 ~~~~~~~~~~~~~~~~~~~~~
 
 The most enjoyable articles show more than just one ``Hello world''
-example. They might compare and contrast what code might look like
-before and after applying the technique they're describing. They might
-peel back the API and show some facet of the underlying
-implementation.
+example. They compare and contrast what code might look like before
+and after applying the technique they're describing. They peel back
+the API and show some facet of the underlying implementation.
 
 I sometimes struggle with how much code to show in an introductory
 document. Too little, and the reader won't know where to turn after
 getting the first example working. Too much, and the whole thing
-degenerates into a parade of (to the reader) nearly-identical
-excerpts. This is where the ``magazine article'' theme comes in most
-helpful to me. Articles show off a small series of curated code
-examples that capture the essence of a library.
+degenerates into a parade of excerpts that don't have enough context
+to be meaningful. This is where the ``magazine article'' theme comes
+in most helpful to me. Articles show off a small series of curated
+code examples that capture the essence of a library.
 
 A Real Page-Turner
 ~~~~~~~~~~~~~~~~~~
@@ -222,7 +221,18 @@ incorporate them into your workflow?
 Keep It With the Code
 ~~~~~~~~~~~~~~~~~~~~~
 
-TBD
+The further you have to reach from your source tree to maintain your
+documents, the less often you're going to maintain them. It's fine to
+have a central place for the big stuff: giant architecture diagrams
+(on second thought, maybe you could just do without those),
+requirements documents, histories of design decisions, and so on. But
+your readers need _something_ right next to the source code to get
+started--and so do you.
+
+You may be thinking, ``But we don't want to clutter up the source
+tree! There's no conceptual room for a giant +README+.''
+Precisely. Keeping this material right next to the source should
+provide an upper bound on its size and complexity.
 
 Use Tools That Fit Your Hand
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -249,33 +259,27 @@ Don't underestimate the power of plain text. It can be read from the
 command line with no additional tools, sent around as e-mail, and
 tracked usefully with revision control tools. This includes the
 ``humane markup'' languages, such as Textile, Markdown,
-ReStructuredText, and AsciiDoc. Using of these formats means just
+ReStructuredText, and AsciiDoc. Using one of these formats means just
 writing like you'd normally do, and then adopting a few simple
 conventions for section titles, code excerpts, and so on. For example,
 here's how a README file might begin in ReStructuredText:
 
-  Halt-o-Meter
-  ============
-  Welcome to the Halt-o-Meter! This software reads the source code of
-  your program and tells you whether or not it will run to
-  completion (and they said it was impossible!).
+--------------------------------------------------------------------
+include::example.rst[]
+--------------------------------------------------------------------
 
-  Example
-  -------
-  Save the following code in ``example.c``::
-    int main() {
-      for (;;);
-      return 0;
-    }
-
-  Now, run Halt-o-Meter::
-    C:\> haltometer example.c
-    Checking... example.c does NOT halt.
+The other text formats look similar to this. I chose ReStructuredText
+for this example because it's the one used by Sphinx, the tool behind
+the Python library documentation. Sphinx is designed for writing books
+and articles, so it's very close to the sweet spot for introducing
+readers to a software library. If you happen to be writing about a
+Python project, Sphinx can link to your generated source
+documentation.
 
 Machine-friendly Markup
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Formats such as DocBook, LaTeX, and RTF are also text-based, but
+Formats such as DocBook, LaTeX, HTML, and RTF are also text-based, but
 typically involve inserting instructions for the typesetting among the
 words of your document. To one degree or another, they're more
 difficult to write by hand than plain text (LaTeX is the easiest in
@@ -289,22 +293,27 @@ XML behind the scenes. So you can get the best of both worlds: the
 ease of plain text, and the feature set of the entire DocBook
 toolchain.
 
-Another interesting contender here is Sphinx, the tool behind the
-Python library documentation. Sphinx is designed for writing books and
-articles, so it's very close to the sweet spot for introducing readers
-to a software library. If you happen to be writing about a Python
-project, Sphinx can link to your generated source documentation.
-
 Word Processors
 ^^^^^^^^^^^^^^^
 
-TBD
+The tools we've talked about so far have been pretty
+programmer-oriented. Some people prefer a change of scene when they're
+working on documentation. They'd rather see formatting changes while
+they're interacting with a document, rather than having to wait for a
+conversion to PDF.
 
-Again, it comes down to choosing the tool that stays out of your
-way. For instance, our software lead and I were creating a design
-document together for a new feature. We started by writing bulleted
-lists in our text editors. We considered porting the text to a
-``real'' tool, such as a word processor, later on. At the moment,
+One thing to watch out for if you go this route is that you're going
+to have to work a little harder to keep your code examples up to
+date. We'll talk about that a little more in a moment.
+
+Which One?
+^^^^^^^^^^
+
+As I said before, it comes down to choosing the tool that stays out of
+your way. For instance, the software team lead and I were creating a
+design document together for a new feature. We started by writing
+bulleted lists in our text editors. We considered porting the text to
+a ``real'' tool, such as a word processor, later on. At the moment,
 though, we didn't want anything to disrupt the flow of ideas. So we
 continued working in text, gradually expanding each bullet into
 sections, titles, and paragraphs.
@@ -316,23 +325,62 @@ and generate a nice-looking PDF to share with the rest of the team.
 Keep the Code Up to Date
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-TBD
+Having stale code examples that break for your first-time users is a
+recipe for frustration. If your library implements a fairly stable
+API, especially one that's defined in a standard somewhere, you may
+not have to worry about this much--just go ahead and paste your source
+examples into your document.
+
+But if your project's programming interface changes frequently, you'll
+need to re-run your examples and keep the versions inside your
+document up to date. This task is easier with the text-based
+formats; most have commands that say in effect, ``insert the source
+code from this external file here.'' For the ones that lack this
+feature, you can use a templating engine such as the Ruby-based eRubis
+or the language-independent m4.
+
+Automatic updates are a little trickier when you're using a word
+processor. If you're only responsible for documenting a couple of
+projects, you might just add a recurring task in your calendar to try
+the snippets manually and make any needed fixes. Any more than that,
+though, and the manual approach will get old quickly. You can use your
+word processor's linking feature and store your snippets in external
+files (which are easier to test automatically).
+
+You can also just update the document by writing a program. Most word
+processors have either a scripting API or an XML-based file format
+that's easy to generate automatically.
 
 Provide a Path from ``Hello world'' to Mastery
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 An engineer who stumbles across your project directory has a number of
 questions, which almost certainly include the following:
+
 * What is this thing?
 * How do I get it and all the dependencies installed?
 * What's the equivalent of ``Hello world'' for this system?
 
+As Jacob Kaplan-Moss writes in his excellent blog post on project
+documentation, ``Be easy.... But not too easy.'' You want your reader
+to get an early success, then challenge him with a couple more
+realistic examples, then point him toward the more in-depth resources
+that live elsewhere.
+
 Closing Thoughts
 ----------------
 
-TBD
+If you're the maintainer of a small- to mid-sized software project,
+the programmers using your software deserve great documentation to
+help get them started. One day, one of those programmers may be you!
+For your sake and theirs, treat yourself to good documentation.
 
-Further Reading
----------------
-``Writing great documentation: what to write,'' Jacob
-Kaplan-Moss. November 10, 2009.
+It's easy for writing to get lost in competition with other, more
+urgent, activities: testing, coding, debugging, planning, and so
+on. You've got to get rid of any excuse not to write. That means
+choosing whichever tool is going to stay out of your way. It means
+setting realistic expectations of what you're trying to accomplish.
+
+If it helps, by all means choose a mental picture to rally behind. You
+may find inspiration in the old computing magazine articles that once
+inspired you to try out someone else's code.

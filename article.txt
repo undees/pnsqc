@@ -20,7 +20,10 @@ how to use or extend the code. Maybe that someone was you, several
 years ago.
 
 In this article, we're going to discuss how programming documentation
-goes wrong, and what you can do about it.
+goes wrong, and what you can do about it. It doesn't take a
+world-class technical writer to document a software project, or even
+to put together an article like this one. It just takes a few times
+being baffled by an unfamiliar, undocumented code base.
 
 What Do You Mean, ``Documentation?''
 ------------------------------------
@@ -104,10 +107,10 @@ welcome to a project.
 One Document to Rule Them All
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Some shops demand that one file be the gateway to all understanding of
-the project. Hardware layouts, software architecture, UML diagrams,
-elaborate class hierarchies, and everything else gets dumped into this
-one location.
+Some shops demand that one file or directory be the gateway to all
+understanding of the project. Hardware layouts, software architecture,
+UML diagrams, elaborate class hierarchies, and everything else gets
+dumped into this one location.
 
 It's easy to see why this approach is tempting. If every fact about
 the system lives in one place, then one can turn to the master
@@ -117,8 +120,8 @@ produced not out of any real need, but because someone thought the
 team should have them? Dumped in the burial ground and
 forgotten. Which leads us to our final misfit.
 
-The Ancient Scrolls
-~~~~~~~~~~~~~~~~~~~
+Ancient Scrolls
+~~~~~~~~~~~~~~~
 
 Documents need to be kept up to date. It feels silly even having to
 say this. But I've definitely encountered libraries whose example code
@@ -180,17 +183,41 @@ text, he explains what each single line of code does.
 Curated Code Excerpts
 ~~~~~~~~~~~~~~~~~~~~~
 
-TBD
+The most enjoyable articles show more than just one ``Hello world''
+example. They might compare and contrast what code might look like
+before and after applying the technique they're describing. They might
+peel back the API and show some facet of the underlying
+implementation.
+
+I sometimes struggle with how much code to show in an introductory
+document. Too little, and the reader won't know where to turn after
+getting the first example working. Too much, and the whole thing
+degenerates into a parade of (to the reader) nearly-identical
+excerpts. This is where the ``magazine article'' theme comes in most
+helpful to me. Articles show off a small series of curated code
+examples that capture the essence of a library.
 
 A Real Page-Turner
 ~~~~~~~~~~~~~~~~~~
 
-TBD
+With all this talk of keeping things short, you're probably wondering
+how to fit in everything the reader might need to know about the
+software. It's important to provide good coverage, but an introduction
+is not the place for that. The introduction absolutely _is_ the place,
+however, for telling your reader where to get more information: a
+series of in-depth guides, full API documentation, a network of wiki
+pages, and so on.
 
 How To Get There From Here
 --------------------------
 
-TBD
+There's no need to go overboard with the magazine metaphor. You don't
+need fancy formatting, callouts, author bios, personality quizzes, or
+intrusive ads. Simply use the idea insofar as it helps you get the job
+done, and discard it as soon as it loses its usefulness.
+
+Assuming you do find a few parts of the idea useful, how can you
+incorporate them into your workflow?
 
 Keep It With the Code
 ~~~~~~~~~~~~~~~~~~~~~
@@ -261,6 +288,12 @@ Incidentally, the AsciiDoc format described earlier generates DocBook
 XML behind the scenes. So you can get the best of both worlds: the
 ease of plain text, and the feature set of the entire DocBook
 toolchain.
+
+Another interesting contender here is Sphinx, the tool behind the
+Python library documentation. Sphinx is designed for writing books and
+articles, so it's very close to the sweet spot for introducing readers
+to a software library. If you happen to be writing about a Python
+project, Sphinx can link to your generated source documentation.
 
 Word Processors
 ^^^^^^^^^^^^^^^

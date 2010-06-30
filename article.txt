@@ -177,12 +177,6 @@ In one sixty-line example that fits on a single page, the author is
 able to demonstrate all the library's major features. In the adjoining
 text, he explains what each single line of code does.
 
-
- from work had a how-to guide that was
-hard to find and not quite up to date with the latest code, but that
-was worth the effort to find and read. The author had carefully laid
-out 
-
 Curated Code Excerpts
 ~~~~~~~~~~~~~~~~~~~~~
 

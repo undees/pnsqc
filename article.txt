@@ -3,6 +3,8 @@ Document Your Software Project
 Ian Dees <ian.s.dees@tektronix.com>
 v0.1, June 2010:
 First draft.
+v0.2, July 2010:
+First draft.
 
 ``Welcome to the team. Here are a couple of bugs you can fix to learn
 your way around the source code. You'll probably want to start by
@@ -40,6 +42,24 @@ documentation. Your audience will be your fellow programmers, very
 likely including yourself. The scope is something quite a bit narrower
 than an entire system--something along the lines of one library or
 subsystem.
+
+Even the small world of a single software library can contain a
+vibrant ecosystem of documentation: READMEs, code comments, API
+references, and more. Jacob Kaplan-Moss, one of the creators of the
+Django web framework, classifies project documents into three broad
+types:[http://jacobian.org/writing/great-documentation/what-to-write]
+
+1. _Tutorials_ give the new programmer enough information to get started.
+2. _Topic guides_ pursue one aspect of the project in great detail.
+3. _References_ provide exhaustive coverage.
+
+It's worth taking a look at your software project to see how you're
+meeting all three of these needs for your readers. This paper will be
+dealing mainly with the first category: getting-started documentation
+for new users of your library. You want to lead your reader to an
+early success, then challenge him with a couple more realistic
+examples, then point him toward the more in-depth resources that live
+elsewhere.
 
 Thought Experiment
 ~~~~~~~~~~~~~~~~~~
@@ -98,11 +118,38 @@ Ghost Writer
 
 A close cousin of the invisible document is the ghost-written
 document; that is, the automated help pages generated from the
-comments in your source code. These are fine for giving your readers a
-way to look up what your library's +foo()+ function does. But how are
-they supposed to know that's the function they need? Machines can't do
-the job we're talking about today: the job of making a newcomer feel
-welcome to a project.
+declarations (and comments, if there are any) in your source code.
+
+Kaplan-Moss views auto-generated documentation as ``almost
+worthless. At best it's a slightly improved version of simply browsing
+through the source....'' This is a justifiable reaction to visiting a
+project's website in search of documentation, and seeing nothing but a
+raw list of class and method names. Hand-written text, he argues, is
+much more useful to the reader.
+
+The contrary point of view is that tools like Javadoc (or its
+equivalent for your language) can encourage you to do a thorough job
+commenting all the parts of your code: function arguments, return
+values, and so on. That's exactly the kind of information a reader is
+looking for when he moves on from the tutorial in search of a
+reference guide.
+
+In the spirit of unifying the two camps, consider the fact that most
+of these tools can import external hand-written text files into their
+generated documents. When you've spent hours writing a detailed
+overview of your project's API--and hours more explaining how to use
+every public method of every class--does that even count as
+automatically generated documentation any more?
+
+A successful project maintainer views writing documentation as an
+intensely (pardon the pun) manual effort, no matter whether or not the
+end result happens to have been generated with help from a source
+tool. For an example of a document maintained separately from the
+source code, pick any given section of the Python standard
+library.footnote::[http://docs.python.org] For an integrated document
+that pulls in some information from the source tree, see the reference
+for the Haml markup
+language.footnote::[http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html]
 
 One Document to Rule Them All
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -365,9 +412,7 @@ questions, which almost certainly include the following:
 * How do I get it and all the dependencies installed?
 * What's the equivalent of ``Hello world'' for this system?
 
-As Jacob Kaplan-Moss writes in his excellent blog post on project
-documentation, ``Be easy.... But not too easy.''
-footnote:[http://jacobian.org/writing/great-documentation/what-to-write]
+Kaplan-Moss writes reminds us to ``Be easy.... But not too easy.''
 You want your reader to get an early success, then challenge him with
 a couple more realistic examples, then point him toward the more
 in-depth resources that live elsewhere.

@@ -4,7 +4,7 @@ Ian Dees <ian.s.dees@tektronix.com>
 v0.1, June 2010:
 First draft.
 v0.2, July 2010:
-First draft.
+Responded to review comments.
 
 ``Welcome to the team. Here are a couple of bugs you can fix to learn
 your way around the source code. You'll probably want to start by

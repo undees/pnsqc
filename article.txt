@@ -1,10 +1,8 @@
 Document Your Software Project
 ==============================
 Ian Dees <ian.s.dees@tektronix.com>
-v0.1, June 2010:
-First draft.
 v0.2, July 2010:
-Responded to review comments.
+Second draft.
 
 ``Welcome to the team. Here are a couple of bugs you can fix to learn
 your way around the source code. You'll probably want to start by
@@ -47,7 +45,7 @@ Even the small world of a single software library can contain a
 vibrant ecosystem of documentation: READMEs, code comments, API
 references, and more. Jacob Kaplan-Moss, one of the creators of the
 Django web framework, classifies project documents into three broad
-types:[http://jacobian.org/writing/great-documentation/what-to-write]
+types:footnote:[http://jacobian.org/writing/great-documentation/what-to-write]
 
 1. _Tutorials_ give the new programmer enough information to get started.
 2. _Topic guides_ pursue one aspect of the project in great detail.
@@ -146,10 +144,10 @@ intensely (pardon the pun) manual effort, no matter whether or not the
 end result happens to have been generated with help from a source
 tool. For an example of a document maintained separately from the
 source code, pick any given section of the Python standard
-library.footnote::[http://docs.python.org] For an integrated document
+library.footnote:[http://docs.python.org] For an integrated document
 that pulls in some information from the source tree, see the reference
 for the Haml markup
-language.footnote::[http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html]
+language.footnote:[http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html]
 
 One Document to Rule Them All
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -209,8 +207,9 @@ One Sitting
 
 The engineer trying out your library doesn't have all day to read an
 entire binder's worth of writing. There's a place for exhaustive
-coverage of a subsystem: the reference material. Give your reader a
-few pages that can be printed out and read over a cup of coffee.
+coverage of a subsystem: the reference material. Instead, give your
+reader a few pages that can be printed out and read over a cup of
+coffee.
 
 Working Examples
 ~~~~~~~~~~~~~~~~
@@ -306,7 +305,7 @@ Don't underestimate the power of plain text. It can be read from the
 command line with no additional tools, sent around as e-mail, and
 tracked usefully with revision control tools. This includes the
 ``humane markup'' languages, such as Textile, Markdown,
-ReStructuredText, and AsciiDoc. Using one of these formats means just
+reStructuredText, and AsciiDoc. Using one of these formats means just
 writing like you'd normally do, and then adopting a few simple
 conventions for section titles, code excerpts, and so on. For example,
 here's how a README file might begin in ReStructuredText:
@@ -316,7 +315,7 @@ footnote:[http://docutils.sourceforge.net/rst.html]
 include::example.rst[]
 --------------------------------------------------------------------
 
-The other text formats look similar to this. I chose ReStructuredText
+The other text formats look similar to this. I chose reStructuredText
 for this example because it's the one used by Sphinx, the tool behind
 the Python library documentation. footnote:[http://sphinx.pocoo.org]
 Sphinx is designed for writing books and articles, so it's very close
@@ -337,7 +336,7 @@ translate it into another format, or automatically update snippets of
 your source code.
 
 Incidentally, the AsciiDoc format described earlier generates DocBook
-XML behind the scenes. footnote:[http://www.methods.co.nz/asciidoc] So
+XML behind the scenes.footnote:[http://www.methods.co.nz/asciidoc] So
 you can get the best of both worlds: the ease of plain text, and the
 feature set of the entire DocBook toolchain.
 
@@ -352,23 +351,7 @@ conversion to PDF.
 
 One thing to watch out for if you go this route is that you're going
 to have to work a little harder to keep your code examples up to
-date. We'll talk about that a little more in a moment.
-
-Which One?
-^^^^^^^^^^
-
-As I said before, it comes down to choosing the tool that stays out of
-your way. For instance, the software team lead and I were creating a
-design document together for a new feature. We started by writing
-bulleted lists in our text editors. We considered porting the text to
-a ``real'' tool, such as a word processor, later on. At the moment,
-though, we didn't want anything to disrupt the flow of ideas. So we
-continued working in text, gradually expanding each bullet into
-sections, titles, and paragraphs.
-
-As it turns out, we ended up with something so close to the ``humane
-markup'' formats that it was the work of a few minutes to clean it up
-and generate a nice-looking PDF to share with the rest of the team.
+date.
 
 Keep the Code Up to Date
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -425,22 +408,129 @@ do these ideas apply in the real world? Do real projects use these
 techniques? What specific tools come in handy? And how are we software
 developers supposed to find the discipline to write?
 
-A Simple Example
-~~~~~~~~~~~~~~~~
+A Realistic Example
+~~~~~~~~~~~~~~~~~~~
 
-TBD: Haml documentation
+Jumping into real-world examples carries a certain amount of
+risk. Reactions to any featured project will range from, ``How can you
+praise the documentation for _this_?'' to ``You should have covered
+Project X instead!'' Choose too many examples, and the whole
+discussion devolves into a laundry list.
 
-Workflow
-~~~~~~~~
+With that in mind, let's shoot for a realistic example. We don't need
+to see the most beautiful, exhaustive documentation in the world. We
+need to see the kind of thing that you or I could reasonably produce
+on a tight time budget.
 
-TBD: Text editor, AsciiDoc, DocBook Kit; example of working at
-whiteboard
+The tutorial for the Sass stylesheet language fits these
+criteria.footnote:[http://sass-lang.com/tutorial]. Sass, by the way,
+makes it easier for web developers to implement Cascading Style Sheets
+(CSS) designs. (I have no connection to Sass, other than as a user.)
+
+Sass's tutorial flows like a magazine article from an old coding
+journal. It starts with a simple ``Hello world'' equivalent, then
+demonstrates a few features in the order that readers are likely to
+wonder about first. It mentions more advanced options in passing,
+but wisely stays on track. You can work your way through the whole
+tutorial over a lunch break.
+
+Many of the hints in the tutorial link to deeper coverage on the
+library.footnote:[http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html]
+This next level isn't quite the exhaustive feature reference from
+Kaplan-Moss's hierarchy of documentation. But it does provide
+hand-written discussion, options, and examples for all the major
+features.
+
+The reference also contains a list of classes and methods, but doesn't
+leave you at their mercy. The narrative material contains several
+links to the classes you're likely to need to know about first when
+you're slinging code. The method descriptions may have been converted
+to HTML with the help of a tool, but they were written by a human
+being.
+
+How did the Sass team get this documentation done? They put it right
+into the source tree! The text is less likely to fall out of date than
+if it lived in some separate location. It's easy for project newcomers
+to view and contribute to the documentation, because it's in Markdown
+format and can therefore be read and written without any special tools.
+
+Story Time
+~~~~~~~~~~
+
+You've no doubt noticed that I've made it most of the way through this
+article without advocating any specific tools. That's by design. Not
+only is every developer different, but every project has its own
+needs.
+
+So rather than recommending one set of tools for all situations, I'd
+like to tell the story of one situation, and how the choice of tools
+fell out of those circumstances.
+
+A few months ago, our software lead and I were designing a new
+feature. We were in uncharted territory: we barely even had words for
+the things we were talking about. And we were supposed to be writing
+the requirements document for this feature.
+
+We grabbed a conference room, sketched on whiteboards, and typed madly
+into our laptops. At this point, there was no conscious decision to
+use a particular format or processing tool. We were just using the
+tools that leapt into our hands first: the same programmer's text
+editors we use to write our code.
+
+As the document took shape, a format emerged. We were subconsciously
+using the same kinds of text conventions we'd used for years for
+e-mail: dashes as crude underlines for section titles, asterisks for
+bulleted lists, and so on.
+
+Once we were done with capturing all those thoughts, it was the work
+of a few minutes to transform the ad-hoc text format into one of the
+``humane markup'' languages described earler. In this case, I chose
+the AsciiDoc format for its ease of making PDFs.
+
+Because AsciiDoc generates DocBook output, any DocBook toolchain can
+be used to make the PDF. I happen to like Remko Tronçon's DocBook Kit,
+a toolbox combining a nice set of styles with a Makefile that
+downloads all the processing tools for
+you.footnote:[http://github.com/remko/docbook-kit]. It's the work of
+a moment to grab a fresh copy of this kit, extract it into your
+project directory, adapt the sample Makefile, and type +make pdf+.
+
+When we first showed the document to our teammates, we wondered if
+we'd catch flak for the fact that we weren't (yet) using the official
+company documentation template. We have no objection to those sorts of
+things, by the way--but there's a time and a place for everything.
+
+To our delight, people appreciated the content of the writing. They
+said that having this kind of ``theory of operation'' helped them
+understand the feature better than a fill-in-the-blanks template would
+have. Of course, when we reach the state of the project where people
+will expect the templates, we'll preserve the narrative text.
 
 The Discipline to Write
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-TBD: Just a quick rah-rah; repeat advice to use tools that don't give
-you an excuse to procrastinate
+Stories about other other projects are all well and good, but they can
+only go so far. At some point, you'll be picking up your own keyboard
+and writing. And that's something that all the exhortations,
+analogies, tools, techniques, and testimonials can't help you with.
+
+How do we as developers cultivate the discipline to write? Advice
+along these lines usually amounts to tautology: ``The only to write is
+to write,'' goes the line of thinking. This is sort of like saying,
+``The only way to diet is to eat less.'' Well, sure, but there are
+ways dieters and writers can help themselves.
+
+For me, it comes down to removing excuses not to write. If I feel
+intimidated by the prospect of a writing a huge document, impatient
+with word processors, and lost looking for templates, that gives me
+three chances to put off writing and go do something else.
+
+That's why the main thrust of this argument has been: think of
+documentation in a way that makes it seem less daunting, choose tools
+that don't give you any excuse to stop using them, and keep your
+documents close by. If you do that, I'll be happy--not least because
+I'll find a well-explained project if I should ever have the good
+fortune to work on a project with you.
 
 Closing Thoughts
 ----------------

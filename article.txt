@@ -417,6 +417,31 @@ You want your reader to get an early success, then challenge him with
 a couple more realistic examples, then point him toward the more
 in-depth resources that live elsewhere.
 
+Real Life
+---------
+
+All this talk of misfits and magazines is all well and good, but how
+do these ideas apply in the real world? Do real projects use these
+techniques? What specific tools come in handy? And how are we software
+developers supposed to find the discipline to write?
+
+A Simple Example
+~~~~~~~~~~~~~~~~
+
+TBD: Haml documentation
+
+Workflow
+~~~~~~~~
+
+TBD: Text editor, AsciiDoc, DocBook Kit; example of working at
+whiteboard
+
+The Discipline to Write
+~~~~~~~~~~~~~~~~~~~~~~~
+
+TBD: Just a quick rah-rah; repeat advice to use tools that don't give
+you an excuse to procrastinate
+
 Closing Thoughts
 ----------------
 

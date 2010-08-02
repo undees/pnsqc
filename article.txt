@@ -1,8 +1,8 @@
 Document Your Software Project
 ==============================
 Ian Dees <ian.s.dees@tektronix.com>
-v0.2, July 2010:
-Second draft.
+v0.3, August 2010:
+Third draft.
 
 ``Welcome to the team. Here are a couple of bugs you can fix to learn
 your way around the source code. You'll probably want to start by
@@ -23,7 +23,11 @@ In this article, we're going to discuss how programming documentation
 goes wrong, and what you can do about it. It doesn't take a
 world-class technical writer to document a software project (and it
 certainly didn't take one to produce this paper!). It just takes a few
-times being baffled by an unfamiliar, undocumented code base.
+times being baffled by an unfamiliar code base, plus a dose of empathy
+for your fellow developers. The number one question in their minds
+when they first pick up your library is, ``Anything I need to know
+before I use this?'' Let's look at a few of the ways you can provide
+an answer.
 
 What Do You Mean, ``Documentation?''
 ------------------------------------
@@ -58,6 +62,12 @@ for new users of your library. You want to lead your reader to an
 early success, then challenge him with a couple more realistic
 examples, then point him toward the more in-depth resources that live
 elsewhere.
+
+Topic guides are crucial as your project's user base grows. For that
+reason, they're outside the scope of what we're talking about today:
+how to jump into a new project (as a reader or writer) without getting
+bogged down. References are tangentially related to the discussion, so
+we'll touch on them in a couple of places.
 
 Thought Experiment
 ~~~~~~~~~~~~~~~~~~
@@ -116,7 +126,9 @@ Ghost Writer
 
 A close cousin of the invisible document is the ghost-written
 document; that is, the automated help pages generated from the
-declarations (and comments, if there are any) in your source code.
+declarations (and comments, if there are any) in your source
+code. It's certainly fine to use a tool to help you generate finished
+documentation. But tools can't create something out of nothing.
 
 Kaplan-Moss views auto-generated documentation as ``almost
 worthless. At best it's a slightly improved version of simply browsing
@@ -127,8 +139,8 @@ much more useful to the reader.
 
 The contrary point of view is that tools like Javadoc (or its
 equivalent for your language) can encourage you to do a thorough job
-commenting all the parts of your code: function arguments, return
-values, and so on. That's exactly the kind of information a reader is
+commenting all the parts of your code: function behavior, correct use,
+gotchas, and so on. That's exactly the kind of information a reader is
 looking for when he moves on from the tutorial in search of a
 reference guide.
 
@@ -149,6 +161,8 @@ that pulls in some information from the source tree, see the reference
 for the Haml markup
 language.footnote:[http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html]
 
+We'll return to the subject of source comments later on in the article.
+
 One Document to Rule Them All
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -162,8 +176,22 @@ the system lives in one place, then one can turn to the master
 document for any answer--in theory. The problem is that these would-be
 museums quickly become mausoleums. Those elaborate diagrams that got
 produced not out of any real need, but because someone thought the
-team should have them? Dumped in the burial ground and
-forgotten. Which leads us to our final misfit.
+team should have them? Dumped in the burial ground and forgotten.
+
+The problem is not just that we might have trouble finding a specific
+piece of information. After all, tools like +grep+ and desktop search
+can help us get through cluttered directories. The problem is that
+there are pieces of information that we don't even know exist. Too
+often, I've struggled with some API because the advice on how to use
+it was buried in a folder I'd never seen.
+
+The exception to this anti-pattern seems to be wikis. In theory, these
+should be just as susceptible to information imprisonment as any other
+centralized documentation storage. But in practice, I've seen
+successful project wikis that made it easy to retrieve project
+knowledge--not just answers to the questions I had, but also answers
+to the questions I didn't know to ask. Perhaps the ease of
+hyperlinked, ad-hoc structure is what makes the difference.
 
 Ancient Scrolls
 ~~~~~~~~~~~~~~~
@@ -198,9 +226,9 @@ right on the spot?
 
 It may be a bit unrealistic to expect users of our libraries to feel
 quite that level of excitement about software that's just part of our
-day jobs. Even so, a well-written project introduction has a few
-things in common with a short programming article in a magazine. Let's
-look into a few of these features.
+day jobs. Even so, a well-written project tutorial has a few things in
+common with a short programming article in a magazine. Let's look into
+a few of these features.
 
 One Sitting
 ~~~~~~~~~~~
@@ -215,16 +243,21 @@ Working Examples
 ~~~~~~~~~~~~~~~~
 
 One of the most heavily leaned-on subsystems in our office has a
-well-loved usage guide. It's not easy to find in our directory
-structure (``was that in +documents/misc/toolname+, or
-+documents/manuals+?''). And it's not quite up to date with the latest
-version of the code it describes. But it's worth seeking out and
-reading anyway, because it does such a thorough job explaining how to
-write code for this subsystem.
+well-loved usage guide. It's not easy to find in our directory. We've
+got multiple centralized silos of documents, of the kind discussed
+earlier in the ``One Document to Rule Them All'' section. I have to
+bookmark a few key files, because I'm never sure whether they're in
++project1/documents/misc/toolname+, or +project2/misc+, etc.
+
+The usage guide is also not quite up to date with the latest version
+of the code it describes. In the terminology of this article, it's an
+``Ancient Scroll.'' But it's worth seeking out and reading anyway,
+because it does such a thorough job explaining how to write code for
+this subsystem.
 
 In one sixty-line example that fits on a single page, the author is
 able to demonstrate all the library's major features. In the adjoining
-text, he explains what each single line of code does.
+text, he explains what each single line of sample code does.
 
 Curated Code Excerpts
 ~~~~~~~~~~~~~~~~~~~~~
@@ -408,8 +441,8 @@ do these ideas apply in the real world? Do real projects use these
 techniques? What specific tools come in handy? And how are we software
 developers supposed to find the discipline to write?
 
-A Realistic Example
-~~~~~~~~~~~~~~~~~~~
+An Achievable Example
+~~~~~~~~~~~~~~~~~~~~~
 
 Jumping into real-world examples carries a certain amount of
 risk. Reactions to any featured project will range from, ``How can you
@@ -454,6 +487,51 @@ if it lived in some separate location. It's easy for project newcomers
 to view and contribute to the documentation, because it's in Markdown
 format and can therefore be read and written without any special tools.
 
+Speaking of Code...
+~~~~~~~~~~~~~~~~~~~
+
+Earlier, we touched on keeping documentation with the code. In some
+cases, this means keeping parts of it _in_ the code. It's possible to
+generate API documentation from source files. But it's also easy to
+over-rely on tools, and end up with a document that's not much more
+help than just reading the source code.
+
+What level of detail is appropriate for documenting a class or a
+function? No single answer will suit all projects. Here are a couple
+of general themes that have been true on most of the project teams
+I've been on.
+
+First, we have to start somewhere. Don't let the fact that some legacy
+class has 30 methods stop you from documenting the first one. Just
+think of the answers to a few simple questions about the file you're
+editing. Which function will project newcomers need to call first?
+Which one do experienced developers frequently get
+wrong?footnote:[This is also a good way to identify parts of your API
+that need to be redesigned. If people frequently confuse the fifth and
+sixth integer parameters to your function, perhaps the function should
+take fewer arguments.]
+
+Second, shy away from those giant comment templates that have required
+sections with names like +NAME+, +DESCRIPTION+, +PURPOSE+,
++ARGUMENTS+, and +REVISION HISTORY+. Your tools should pick up the
+function's name and parameters from its argument
+list.footnote:[Dynamically typed languages may need a few extra
+hints.]  Instead, just write free-form text. That'll keep you writing,
+and it'll save your readers from having to slog through parameter
+descriptions like ``second_number: the second number to be added.''
+
+If we return to the example of the Haml project, we see that their
+source code for public APIs contains these kinds of comments. Consider
+their +Filters+
+module.footnote:[http://github.com/nex3/haml/blob/master/lib/haml/filters.rb]
+The file begins with a three-paragraph description, complete with a
+simple example. By opting for something more than just a single
+sentence, they've deftly avoided the trap of writing things like,
+``The +WidgetManager+ class manages widgets.'' They've also steered
+clear of the one-size-fits-all approach. Some functions are simple
+enough just to need a two-liner. Others get the full treatment, with
+usage examples and discussions of valid parameter values.
+
 Story Time
 ~~~~~~~~~~
 
@@ -477,10 +555,10 @@ use a particular format or processing tool. We were just using the
 tools that leapt into our hands first: the same programmer's text
 editors we use to write our code.
 
-As the document took shape, a format emerged. We were subconsciously
-using the same kinds of text conventions we'd used for years for
-e-mail: dashes as crude underlines for section titles, asterisks for
-bulleted lists, and so on.
+As the document took shape, a writing style emerged. We were
+subconsciously using the same kinds of text conventions we'd used for
+years for e-mail: dashes as crude underlines for section titles,
+asterisks for bulleted lists, and so on.
 
 Once we were done with capturing all those thoughts, it was the work
 of a few minutes to transform the ad-hoc text format into one of the
@@ -497,7 +575,7 @@ project directory, adapt the sample Makefile, and type +make pdf+.
 
 When we first showed the document to our teammates, we wondered if
 we'd catch flak for the fact that we weren't (yet) using the official
-company documentation template. We have no objection to those sorts of
+company documentation template. We don't mind using those sorts of
 things, by the way--but there's a time and a place for everything.
 
 To our delight, people appreciated the content of the writing. They
@@ -515,10 +593,10 @@ and writing. And that's something that all the exhortations,
 analogies, tools, techniques, and testimonials can't help you with.
 
 How do we as developers cultivate the discipline to write? Advice
-along these lines usually amounts to tautology: ``The only to write is
-to write,'' goes the line of thinking. This is sort of like saying,
-``The only way to diet is to eat less.'' Well, sure, but there are
-ways dieters and writers can help themselves.
+along these lines usually amounts to tautology. ``The only way to
+write is to write,'' goes the line of thinking. This is sort of like
+saying, ``The only way to diet is to eat less.'' Well, sure, but there
+are ways dieters and writers can help themselves.
 
 For me, it comes down to removing excuses not to write. If I feel
 intimidated by the prospect of a writing a huge document, impatient

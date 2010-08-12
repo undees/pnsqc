@@ -1,8 +1,6 @@
 Document Your Software Project
 ==============================
 Ian Dees <ian.s.dees@tektronix.com>
-v0.3, August 2010:
-Third draft.
 
 ``Welcome to the team. Here are a couple of bugs you can fix to learn
 your way around the source code. You'll probably want to start by
@@ -243,21 +241,22 @@ Working Examples
 ~~~~~~~~~~~~~~~~
 
 One of the most heavily leaned-on subsystems in our office has a
-well-loved usage guide. It's not easy to find in our directory. We've
-got multiple centralized silos of documents, of the kind discussed
-earlier in the ``One Document to Rule Them All'' section. I have to
-bookmark a few key files, because I'm never sure whether they're in
-+project1/documents/misc/toolname+, or +project2/misc+, etc.
-
-The usage guide is also not quite up to date with the latest version
-of the code it describes. In the terminology of this article, it's an
-``Ancient Scroll.'' But it's worth seeking out and reading anyway,
-because it does such a thorough job explaining how to write code for
-this subsystem.
+well-loved usage guide. Even though the document doesn't score 100% on
+all the counts we've discussed (e.g., being easy to find and up to
+date), it's always worth the effort of tracking it down and reading
+it--because it does such a thorough job explaining how to write code
+for this subsystem.
 
 In one sixty-line example that fits on a single page, the author is
 able to demonstrate all the library's major features. In the adjoining
-text, he explains what each single line of sample code does.
+text, he explains what each single line of sample code does. After
+refreshing our memory of how that one example works, we usually have
+enough information to jump right in and code. For those rare cases
+where we need a little more, he's provided a thorough API reference in
+the back.
+
+The best thing about this document is that it's like a journey through
+the mind of its author. Understand him, and you understand the code.
 
 Curated Code Excerpts
 ~~~~~~~~~~~~~~~~~~~~~
@@ -428,10 +427,10 @@ questions, which almost certainly include the following:
 * How do I get it and all the dependencies installed?
 * What's the equivalent of ``Hello world'' for this system?
 
-Kaplan-Moss writes reminds us to ``Be easy.... But not too easy.''
-You want your reader to get an early success, then challenge him with
-a couple more realistic examples, then point him toward the more
-in-depth resources that live elsewhere.
+Kaplan-Moss reminds us to ``Be easy.... But not too easy.''  You want
+your reader to get an early success, then challenge him with a couple
+more realistic examples, then point him toward the more in-depth
+resources that live elsewhere.
 
 Real Life
 ---------
@@ -599,9 +598,9 @@ saying, ``The only way to diet is to eat less.'' Well, sure, but there
 are ways dieters and writers can help themselves.
 
 For me, it comes down to removing excuses not to write. If I feel
-intimidated by the prospect of a writing a huge document, impatient
-with word processors, and lost looking for templates, that gives me
-three chances to put off writing and go do something else.
+intimidated by the prospect of writing a huge document, impatient with
+word processors, and lost looking for templates, that gives me three
+chances to put off writing and go do something else.
 
 That's why the main thrust of this argument has been: think of
 documentation in a way that makes it seem less daunting, choose tools

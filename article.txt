@@ -100,7 +100,7 @@ What goes wrong, then? Assuming authors' hearts are in the right
 place, we can imagine that a document that fails us may just be the
 wrong kind of document for the task. Let's look at a few ways in which
 a software library might not be getting the textual attention it
-deserves..
+deserves.
 
 Invisible Ink
 ~~~~~~~~~~~~~
@@ -340,7 +340,7 @@ tracked usefully with revision control tools. This includes the
 reStructuredText, and AsciiDoc. Using one of these formats means just
 writing like you'd normally do, and then adopting a few simple
 conventions for section titles, code excerpts, and so on. For example,
-here's how a README file might begin in ReStructuredText:
+here's how a README file might begin in reStructuredText:
 footnote:[http://docutils.sourceforge.net/rst.html]
 
 --------------------------------------------------------------------
@@ -376,10 +376,14 @@ Word Processors
 ^^^^^^^^^^^^^^^
 
 The tools we've talked about so far have been pretty
-programmer-oriented. Some people prefer a change of scene when they're
-working on documentation. They'd rather see formatting changes while
-they're interacting with a document, rather than having to wait for a
-conversion to PDF.
+programmer-oriented. A few of my teammates prefer a change of scene
+when they're working on documentation. They'd rather see formatting
+changes while they're interacting with a document, rather than having
+to wait for a conversion to PDF.
+
+So they fire up a word processor and start writing. They use styles
+and templates to avoid getting mired down in micro-decisions about the
+document's look. And they produce readable, useful documentation.
 
 One thing to watch out for if you go this route is that you're going
 to have to work a little harder to keep your code examples up to
@@ -552,7 +556,7 @@ We grabbed a conference room, sketched on whiteboards, and typed madly
 into our laptops. At this point, there was no conscious decision to
 use a particular format or processing tool. We were just using the
 tools that leapt into our hands first: the same programmer's text
-editors we use to write our code.
+editors with which we write our code.
 
 As the document took shape, a writing style emerged. We were
 subconsciously using the same kinds of text conventions we'd used for
@@ -568,7 +572,7 @@ Because AsciiDoc generates DocBook output, any DocBook toolchain can
 be used to make the PDF. I happen to like Remko Tronçon's DocBook Kit,
 a toolbox combining a nice set of styles with a Makefile that
 downloads all the processing tools for
-you.footnote:[http://github.com/remko/docbook-kit]. It's the work of
+you.footnote:[http://github.com/remko/docbook-kit] It's the work of
 a moment to grab a fresh copy of this kit, extract it into your
 project directory, adapt the sample Makefile, and type +make pdf+.
 

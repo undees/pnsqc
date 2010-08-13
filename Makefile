@@ -2,7 +2,7 @@
 DOCUMENT = pnsqc.xml
 
 $(DOCUMENT): article.txt
-	asciidoc -a docinfo -b docbook -o pnsqc.xml article.txt
+	asciidoc -b docbook -o pnsqc.xml article.txt
 
 # Include the DocBook Kit's makefile rules
 include docbook-kit/tools/Makefile.inc

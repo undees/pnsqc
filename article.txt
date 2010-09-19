@@ -1,6 +1,5 @@
-Document Your Software Project
-==============================
-Ian Dees <ian.s.dees@tektronix.com>
+Introduction
+------------
 
 ``Welcome to the team. Here are a couple of bugs you can fix to learn
 your way around the source code. You'll probably want to start by
@@ -206,6 +205,7 @@ habits. Every little barrier in the way of writing looks like an
 impenetrable wall when we think about doing it over and over again in
 maintenance mode.
 
+<<<
 It follows that any little thing we can do to stop ourselves from
 dreading writing and just _write_ will have a big payoff. I'd like to
 discuss several such things you can do in service of this goal. To tie

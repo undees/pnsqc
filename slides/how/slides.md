@@ -13,4 +13,8 @@
 !SLIDE transition=fade
 
 # Provide a Path #
-## from "Hello World" to Mastery ##
+## from &#8220;Hello World&#8221; to Mastery ##
+
+!SLIDE transition=fade
+
+# Use Tools That Fit Your Hand #

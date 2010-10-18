@@ -1,6 +1,7 @@
 !SLIDE title-slide
 
-# Document Your Software Project! #
+# Document Your #
+# Software Project! #
 ## ian.s.dees@tek.com ##
 
 .notes Hi, I'm Ian.  I'm here to talk about software documentation,

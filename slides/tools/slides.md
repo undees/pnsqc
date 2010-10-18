@@ -15,19 +15,20 @@
 generate anything Used it to write this paper Including the required
 format
 
-!SLIDE transition=fade small
+!SLIDE transition=fade smaller
 
 	Plain Text and Its Relatives
 	^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-	Don't underestimate the power of plain text. It can be read from the
-	command line with no additional tools, sent around as e-mail, and
-	tracked usefully with revision control tools. This includes the
-	``humane markup'' languages, such as Textile, Markdown,
-	reStructuredText, and AsciiDoc. Using one of these formats means just
-	writing like you'd normally do, and then adopting a few simple
-	conventions for section titles, code excerpts, and so on. For example,
-	here's how a README file might begin in reStructuredText:
+	Don't underestimate the power of plain text. It can be read from
+	the command line with no additional tools, sent around as e-mail,
+	and tracked usefully with revision control tools. This includes
+	the ``humane markup'' languages, such as Textile, Markdown,
+	reStructuredText, and AsciiDoc. Using one of these formats means
+	just writing like you'd normally do, and then adopting a few
+	simple conventions for section titles, code excerpts, and so on.
+	For example, here's how a README file might begin in
+	reStructuredText:
 	footnote:[http://docutils.sourceforge.net/rst.html]
 
 	--------------------------------------------------------------------
@@ -108,7 +109,7 @@ format
 
 !SLIDE transition=fade
 
-       http://github.com/undees/pnsqc
+# http://github.com/undees/pnsqc #
 
 !SLIDE transition=fade smbullets
 

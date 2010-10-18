@@ -74,3 +74,7 @@ find?
 !SLIDE transition=fade center
 
 ![Welcome](welcome.jpg)
+
+!SLIDE transition=fade
+
+# Three Types #

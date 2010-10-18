@@ -15,6 +15,29 @@
 generate anything Used it to write this paper Including the required
 format
 
+!SLIDE transition=fade small
+
+	Plain Text and Its Relatives
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+	Don't underestimate the power of plain text. It can be read from the
+	command line with no additional tools, sent around as e-mail, and
+	tracked usefully with revision control tools. This includes the
+	``humane markup'' languages, such as Textile, Markdown,
+	reStructuredText, and AsciiDoc. Using one of these formats means just
+	writing like you'd normally do, and then adopting a few simple
+	conventions for section titles, code excerpts, and so on. For example,
+	here's how a README file might begin in reStructuredText:
+	footnote:[http://docutils.sourceforge.net/rst.html]
+
+	--------------------------------------------------------------------
+	include::example.rst[]
+	--------------------------------------------------------------------
+
+!SLIDE transition=fade
+
+![AsciiDoc](asciidoc.png)
+
 !SLIDE transition=fade bullets
 
 # Machine-Friendly Markup #
@@ -83,6 +106,10 @@ format
 	* [Firebug integration]
 	  (https://addons.mozilla.org/en-US/firefox/addon/103988)
 
+!SLIDE transition=fade
+
+       http://github.com/undees/pnsqc
+
 !SLIDE transition=fade smbullets
 
 # Other Voices #
@@ -102,4 +129,3 @@ format
 * ghost: http://www.flickr.com/photos/cocreatr/2345627792
 * ring: http://www.flickr.com/photos/garlandcannon/4918141830
 * scroll: http://www.flickr.com/photos/emdot/4876145
-* magazine: http://www.google.com/images?q=byte+magazine

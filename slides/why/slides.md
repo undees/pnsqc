@@ -6,10 +6,10 @@
 
 # PNSQC #
 
-.notes It took me a few years to work up the nerve to submit a talk.
-You guys are friends, neighbors, and in all cases people I really look
-up to.  So it took me a few years to work up the nerve to submit a
-talk.  But with this year's topic, I felt like I had something to say.
+.notes PNSQC is an intimidating conference.  Not only are you
+respected engineers, but you're also friends and neighbors.  It took
+me a few years to work up the nerve to submit a talk.  With this
+year's topic, I felt like I had something to say.
 
 !SLIDE transition=fade
 
@@ -18,18 +18,17 @@ talk.  But with this year's topic, I felt like I had something to say.
 .notes The theme of the conference this year is Achieving Quality in a
 Complex Environment.  What associations does that trigger?  Maybe
 something about testing?  That'd be doable if I'd spent the year doing
-a peer-reviewed effectiveness study instead of jumping feet-first into
-a new codebase.  Besides, testing is already well-covered here.
+a peer-reviewed effectiveness study (I haven't).  Besides, testing is
+already well-covered here.
 
 !SLIDE transition=fade
 
 # The New Guy #
 
-.notes Let's back up a second.  "Feet-first into a new codebase."
-There's a topic full of good material.  I joined a new team at work a
-couple of years ago, making me the new guy, or at least one of 'em.
-Has anyone here joined a new project or team recently?  What was it
-that helped you get oriented?
+.notes So what has this year been about?  Well, I joined a new team at
+work a couple of years ago, making me the new guy, or at least one of
+'em.  Has anyone here joined a new project or team recently?  What was
+it that helped you get oriented?
 
 !SLIDE transition=fade
 
@@ -45,11 +44,10 @@ tradition.
 
 # Documentation #
 
-.notes What was new to me was the bias toward preserving and
-documenting those stories.  There's a real emphasis on doing the
-legwork to find out how a system works ("Ask Lance where to
-start,...") and then make sure that others benefit from your detective
-work ("... then add it to the docs.")
+.notes But this oral tradition has a bias toward preservation.
+There's a real emphasis on doing the legwork to find out how a system
+works ("Ask Erik where to start,...") and then make sure that others
+benefit from your detective work ("... then add it to the docs.")
 
 !SLIDE transition=fade bullets incremental
 
@@ -75,6 +73,16 @@ find?
 
 ![Welcome](welcome.jpg)
 
+.notes For one particular subsystem, I found a welcome mat of sorts.
+In a single page, the author laid out a sixty-line example that showed
+how to use most of the features of the library.  Over the next few
+pages, he explained the example line by line.
+
 !SLIDE transition=fade
 
 # Three Types #
+
+.notes Jacob Kaplan-Moss likes to break library documentation into
+three broad types: introductory tutorials, detailed topic guides, and
+low-level API references.  Today, we'll be talking mostly about
+tutorials (like the example I just mentioned) and references.

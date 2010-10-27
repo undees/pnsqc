@@ -2,16 +2,14 @@
 
 # The Magazine Metaphor #
 
-.notes Now that we're all depressed, let's turn to an image that has
-warm, fuzzy connotations for a lot of developers.
-
 !SLIDE transition=fade center
 
 ![Computer Magazines](magazine.png)
 
-.notes What was your favorite computer magazine when you were cutting
-your teeth as a coder? COMPUTE!, BYTE, DDJ?  What did you like about
-these?
+.notes Now that we’re all depressed, let’s turn to an image that has
+warm, fuzzy connotations for a lot of developers. What was your
+favorite computer magazine when you were cutting your teeth as a
+coder? _COMPUTE!_, _BYTE_, _DDJ_?  What did you like about these?
 
 !SLIDE transition=fade
 
@@ -40,6 +38,6 @@ the subject.
 # Short Form #
 
 .notes Not only are these compact articles not intimidating to read,
-they're not intimidating to write.  "Write a short articule
-introducing the new subsystem" is a lot less daunting than, "Document
-the entire system."
+they’re not intimidating to write.  “Write a short articule
+introducing the new subsystem” is a lot less daunting than, “Document
+the entire system.”

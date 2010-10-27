@@ -2,9 +2,6 @@
 
 # A Few Tools #
 
-.notes Speaking of tools....  Here are a few ways you can tie
-documents and code together.
-
 !SLIDE transition=fade bullets
 
 # Humane Markup #
@@ -14,9 +11,10 @@ documents and code together.
 * reStructuredText
 * AsciiDoc
 
-.notes First, there are the so-called humane markup languages.  These
-are like text you'd write in an e-mail message: dashes or equals signs
-for underlining, stars for bulleted lists, and so on.
+.notes Speaking of tools, here are a few ways to create code-friendly
+documents.  First, there are the so-called humane markup languages.
+These are like text you’d write in an e-mail message: dashes or equals
+signs for underlining, stars for bulleted lists, and so on.
 
 !SLIDE transition=fade smaller
 
@@ -39,15 +37,15 @@ for underlining, stars for bulleted lists, and so on.
 	--------------------------------------------------------------------
 
 .notes I wrote my paper for this conference in one of these formats,
-AsciiDoc.  Here's an excerpt.  As you can see, it's just plain text
+AsciiDoc.  Here’s an excerpt.  As you can see, it’s just plain text
 with a few conventions.  Notice that I can tie in source code that
 lives in external files.
 
-!SLIDE transition=fade
+!SLIDE transition=fade center
 
 ![AsciiDoc](asciidoc.png)
 
-.notes Here's a bit of the PDF that came from this process.  The
+.notes Here’s a bit of the PDF that came from this process.  The
 fresh, tested code example from the external file is typeset right
 into the printable documentation.
 
@@ -60,9 +58,9 @@ into the printable documentation.
 * DocBook
 * HTML
 
-.notes If you're already a whiz in one of the more
+.notes If you’re already a whiz in one of the more
 typesetting-oriented text languages like TeX or RTF, you should
-absolutely use those.  Because they're still somewhat text-based, it's
+absolutely use those.  Because they’re still somewhat text-based, it’s
 easy enough to use a script to update sections that contain source
 code.
 
@@ -71,9 +69,9 @@ code.
 # Word Processors #
 
 .notes The welcome-mat document I mentioned earlier was a plain old
-Word file.  All of the Big Three--Word, OpenOffice.org, and iWork--can
-save to XML-based formats, which means it should still be possible to
-update code snippets.  (See the snippetizer project on GitHub for an
+Word file.  All of the Big Three—Word, OpenOffice.org, and iWork—can
+save to XML-based formats, which means it’s possible to update code
+snippets automatically.  (See the snippetizer project on GitHub for an
 iWork example.)
 
 !SLIDE transition=fade
@@ -82,7 +80,7 @@ iWork example.)
 ## http://sass-lang.com ##
 
 .notes The Sass project for generating CSS files is the kind of
-documentation that's not only readable, it's also within our reach as
+documentation that’s not only readable, it’s also within our reach as
 developers to create.
 
 !SLIDE transition=fade center
@@ -90,13 +88,13 @@ developers to create.
 ![Sass](sass1.png)
 
 .notes The main page begins with a three-line example for the
-impatient, then explains what the library is and why you'd use it.
+impatient, then explains what the library is and why you’d use it.
 
 !SLIDE transition=fade center
 
 ![Sass](sass2.png)
 
-.notes Further down the page are a bunch of real examples you're
+.notes Further down the page are a bunch of real examples you’re
 encouraged to try.
 
 !SLIDE transition=fade center
@@ -113,17 +111,16 @@ creation.
 
 .notes The API documentation leads off with an equally lucid
 walkthrough of the major parts of the system.  You have access to all
-the class and method documentation--but you also get pointers on which
-classes you need to see first, depending on what you're trying to do.
+the class and method documentation—but you also get advice on where to
+look first.
 
 !SLIDE transition=fade center
 
 ![Sass](sass5.png)
 
-.notes Once you've zoomed in on a particular method, this is what you
+.notes Once you’ve zoomed in on a particular method, this is what you
 see.  Unlike our pathological Ruby example from earlier on, this text
-describes the parameters, shows an example usage, and explains what
-happens when something goes wrong.
+discusses parameters, examples, and error handling.
 
 !SLIDE transition=fade smaller
 
@@ -139,18 +136,19 @@ happens when something goes wrong.
 	* [Firebug integration]
 	  (https://addons.mozilla.org/en-US/firefox/addon/103988)
 
-.notes Here's a snippet of the raw text that's checked into the source
+.notes Here’s a snippet of the raw text that’s checked into the source
 tree, right alongside the code.  The format is Markdown, one of the
 humane markup languages I mentioned earlier.
 
-!SLIDE transition=fade
+!SLIDE transition=fade small
 
 # http://github.com/undees/pnsqc #
 
-.notes This style of documentation is not only readable, it's
-achievable by us, the developers who have to provide it.  To see the
-paper or the slides for this presentation, please visit the address
-above.
+.notes This style of documentation is not only readable, it’s
+achievable by us, the developers whose job it is to provide it.
+
+.notes To see the paper or the slides for this presentation, please
+visit the address above.
 
 !SLIDE transition=fade smbullets
 
@@ -160,9 +158,9 @@ above.
 * http://tom.preston-werner.com/2010/08/23/readme-driven-development.html
 * http://railstips.org/blog/archives/2010/10/14/stop-googling
 
-.notes Here's the Jacob Kaplan-Moss article mentioned earlier, along
+.notes Here’s the Jacob Kaplan-Moss article mentioned earlier, along
 with a Tom Preston-Warner blog post on README-driven development.  For
-a contrary (or orthogonal) point of view, see John Nunemaker's
+a contrary (or orthogonal) point of view, see John Nunemaker’s
 exhortation for people new to a sytem to jump straight into the code.
 
 !SLIDE transition=fade smbullets

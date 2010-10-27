@@ -1,0 +1,22 @@
+@media print {
+    body {
+        font-family: "Gill Sans", Helvetica, Arial, sans-serif;
+    }
+
+    p.notes {
+        display: block;
+        font-size: 12pt;
+        background-color: white;
+        color: black;
+        text-align: justify;
+        width: 80%;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        padding: 1.5em 10%;
+    }
+
+    .slide, .preso {
+        width: 7in;
+        height: 7in;
+        border: none;
+    }
+}

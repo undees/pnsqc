@@ -2,19 +2,15 @@
 
 # Document Misfits #
 
-.notes We've just talked about a project whose "welcome mat" document
-helped new users acclimate.  What about projects that aren't so
-blessed?  What kinds of things have gone wrong on projects you've
-seen?
-
 !SLIDE transition=fade center
 
 # Invisible Ink #
 
 ![Invisible Ink](invisible.jpg)
 
-.notes The first thing that can go wrong, of course, is no
-documentation at all.
+.notes What kinds of things have gone wrong with documentation in your
+experience?  One of the most common things I’ve seen is projects with
+no docs at all.
 
 !SLIDE transition=fade center
 
@@ -52,9 +48,9 @@ class is for or where to start.
 	  end
 	end
 
-.notes Consider this example.  The source comments don't tell us
-anything we couldn't have gotten from the class and method names.
-Worse, they don't tell us what these parameters mean.
+.notes Consider this example.  The source comments don’t tell us
+anything we couldn’t have gotten from the class and method names.
+For instance, they don’t tell us what these parameters mean.
 
 !SLIDE transition=fade center
 
@@ -64,7 +60,7 @@ Worse, they don't tell us what these parameters mean.
 validation link) with no content.  The fix is twofold: write enough in
 the source comments for a reader to know how to use your class, and
 provide an overview telling him where to start.  Both of these
-solutions are manual; even if you're generating docs automatically,
+solutions are manual; even if you’re generating docs automatically,
 you still need to do some writing yourself.
 
 !SLIDE transition=fade center
@@ -73,12 +69,11 @@ you still need to do some writing yourself.
 
 ![Rule Them All](ring.jpg)
 
-.notes At the other end of the spectrum, we have
-overdocumentation.  I've seen people throw a sea of inscrutable
-architecture diagrams and outdated requirements documents into a
-central binder, far away from the source code.  These can be useful as
-a historical record, but they're seldom helpful when it's actually
-time to write software.
+.notes At the other end of the spectrum, we have overdocumentation.
+I’ve seen people throw a mass of inscrutable architecture diagrams and
+outdated requirements documents into a central binder, far away from
+the source code.  These can be informative as a historical record, but
+they’re seldom helpful when it’s actually time to write software.
 
 !SLIDE transition=fade center
 
@@ -88,5 +83,6 @@ time to write software.
 
 .notes Documents go out of date, especially ones that are kept in a
 central stash that no one remembers to look in.  Sometimes the text is
-all right, but the source examples go out of date.  Later, we'll see
-examples of how to keep your example code tested and updated.
+all right, but the source examples stop running with the latest
+software.  Later, we’ll talk about ways to keep your example code
+tested and updated.

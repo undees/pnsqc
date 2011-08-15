@@ -10,7 +10,7 @@ double systemBatteryLevel()
 class MindControlLaser
 {
 public:
-    void aimWithMandatoryLogging()
+    void AimWithMandatoryLogging()
     {
         // ...
 
@@ -23,7 +23,7 @@ public:
         // ...
     }
 
-    void aimWitOptionalLogging()
+    void AimWitOptionalLogging()
     {
         // ...
 
@@ -44,8 +44,8 @@ public:
 int main()
 {
     MindControlLaser mcl;
-    mcl.aimWithMandatoryLogging();
-    mcl.aimWitOptionalLogging();
+    mcl.AimWithMandatoryLogging();
+    mcl.AimWitOptionalLogging();
 
     return 0;
 }
